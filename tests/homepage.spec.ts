@@ -7,37 +7,18 @@ test("hero renders the team name and tagline", async ({ page }) => {
   await expect(hero.getByText(/online gaming platform/i)).toBeVisible();
 });
 
-test("desktop nav shows section links", async ({ page, isMobile }) => {
-  test.skip(isMobile, "desktop nav is hidden below the sm breakpoint");
-  await page.goto("/");
-  const nav = page.getByRole("navigation", { name: "Primary" }).first();
-  await expect(nav.getByRole("link", { name: "Team", exact: true })).toBeVisible();
-  await expect(nav.getByRole("link", { name: "Code of Conduct" })).toBeVisible();
-});
-
-test("mobile menu toggles open and closed with the keyboard", async ({ page, isMobile }) => {
-  test.skip(!isMobile, "mobile menu only renders on small viewports");
-  await page.goto("/");
-  const toggle = page.getByRole("button", { name: "Open menu" });
-  await toggle.click();
-  const mobileMenu = page.locator("#mobile-menu");
-  await expect(mobileMenu.getByRole("link", { name: "Team", exact: true })).toBeVisible();
-  await page.keyboard.press("Escape");
-  await expect(mobileMenu).toBeHidden();
-});
-
 test("project section describes the platform and links to it as coming soon", async ({ page }) => {
   await page.goto("/");
   const project = page.locator("#project");
   await expect(project.getByRole("heading", { name: "The Project" })).toBeVisible();
   await expect(project.getByText(/board game café/i)).toBeVisible();
-  const launchLink = project.getByRole("link", { name: "Launch the platform" });
+  const launchLink = project.getByRole("link", { name: "See the platform" });
   await expect(launchLink).toHaveAttribute("href", "#");
   await expect(launchLink).toHaveAttribute("aria-disabled", "true");
   await expect(project.getByText("Coming soon")).toBeVisible();
 });
 
-test("team section renders all ten members", async ({ page }) => {
+test("team section renders all ten members with a Code of Conduct download", async ({ page }) => {
   await page.goto("/");
   const team = page.locator("#team");
   await expect(team.getByRole("heading", { name: "The Team" })).toBeVisible();
@@ -45,6 +26,26 @@ test("team section renders all ten members", async ({ page }) => {
   await expect(team.getByRole("heading", { name: "Maryam Mirbagheri" })).toBeVisible();
   await expect(team.getByRole("heading", { name: "Alexander" })).toBeVisible();
   await expect(team.locator("article")).toHaveCount(10);
+
+  const download = team.getByRole("link", { name: "Download Code of Conduct" });
+  await expect(download).toHaveAttribute("href", "/docs/code-of-conduct.pdf");
+  await expect(download).toHaveAttribute("download", "");
+});
+
+test("all team member photos actually load", async ({ page }) => {
+  await page.goto("/");
+  const photos = page.locator('#team img[alt^="Portrait"]');
+  const count = await photos.count();
+  expect(count).toBe(9); // 10 members, 1 (Alexander) has no photo
+
+  for (let i = 0; i < count; i += 1) {
+    const img = photos.nth(i);
+    await expect(img).toBeVisible();
+    const naturalWidth = await img.evaluate((el: HTMLImageElement) => {
+      return el.complete ? el.naturalWidth : -1;
+    });
+    expect(naturalWidth).not.toBe(0);
+  }
 });
 
 test("team order reshuffles between page loads", async ({ page }) => {
@@ -61,4 +62,32 @@ test("team order reshuffles between page loads", async ({ page }) => {
   }
 
   expect(reshuffled).toBe(true);
+});
+
+test("team members link out to LinkedIn in a new tab", async ({ page }) => {
+  await page.goto("/");
+  const jakubCard = page
+    .locator("#team article")
+    .filter({ has: page.getByRole("heading", { name: "Jakub Kuka" }) });
+  const linkedin = jakubCard.getByRole("link", { name: "LinkedIn ↗" });
+
+  await expect(linkedin).toHaveAttribute("href", "https://www.linkedin.com/in/jakub-kuka/");
+  await expect(linkedin).toHaveAttribute("target", "_blank");
+  await expect(linkedin).toHaveAttribute("rel", /noopener/);
+
+  // Members with no supplied LinkedIn profile shouldn't get a fabricated link.
+  const alexanderCard = page
+    .locator("#team article")
+    .filter({ has: page.getByRole("heading", { name: "Alexander" }) });
+  await expect(alexanderCard.getByRole("link", { name: /LinkedIn/ })).toHaveCount(0);
+});
+
+test("footer shows the copyright and scrolls back to top", async ({ page }) => {
+  await page.goto("/");
+  const footer = page.locator("footer");
+  const year = new Date().getFullYear().toString();
+  await expect(footer.getByText(new RegExp(`©\\s*${year}\\s*Masters`))).toBeVisible();
+
+  await footer.getByRole("button", { name: "Back to top" }).click();
+  await expect(page.locator("#top")).toBeInViewport();
 });

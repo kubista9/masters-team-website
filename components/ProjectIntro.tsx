@@ -12,7 +12,7 @@ export default function ProjectIntro() {
   return (
     <section
       id="project"
-      className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
+      className="flex min-h-[80vh] flex-col justify-center border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-8">
         <div className="flex flex-col gap-4 text-center">
@@ -33,7 +33,7 @@ export default function ProjectIntro() {
           {FEATURES.map((feature) => (
             <li
               key={feature}
-              className="pixel-border flex w-full items-center gap-3 bg-surface px-4 py-3 text-sm text-foreground sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)]"
+              className="pixel-border flex w-full items-center gap-3 bg-surface px-4 py-3 text-sm text-foreground sm:w-[calc(50%-0.375rem)]"
             >
               <span aria-hidden className="text-accent">
                 ▪

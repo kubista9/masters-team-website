@@ -21,8 +21,8 @@ export default function TeamGrid() {
       id="team"
       className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12 flex flex-col gap-4 text-center">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
             The Team
           </h2>
@@ -30,11 +30,22 @@ export default function TeamGrid() {
             Ten software-engineering master&apos;s students building Masters
             together.
           </p>
+          <a
+            href="/docs/code-of-conduct.pdf"
+            download
+            className="pixel-border pixel-shadow-accent bg-accent px-5 py-2.5 font-mono text-xs uppercase tracking-wide text-background transition-transform duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+          >
+            Download Code of Conduct
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-6">
           {members.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
+            <TeamMemberCard
+              key={member.id}
+              member={member}
+              className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+            />
           ))}
         </div>
       </div>
