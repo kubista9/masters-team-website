@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0d12;
+  --surface: #141822;
+  --foreground: #f4f3ec;
+  --foreground-muted: #a6acbb;
+  --accent: #39ff88;
+  --accent-2: #ff5fa2;
+  --accent-3: #ffd166;
+  --border: #2b3040;
+  --border-strong: #f4f3ec;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --font-display: var(--font-press-start);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgb(255 255 255 / 2%) 0px,
+      rgb(255 255 255 / 2%) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+/* Pixel-inspired hard edges: solid borders, offset shadows, no blur, no soft radius. */
+.pixel-border {
+  border: 3px solid var(--border-strong);
+}
+
+.pixel-shadow {
+  box-shadow: 6px 6px 0 0 var(--border-strong);
+}
+
+.pixel-shadow-accent {
+  box-shadow: 6px 6px 0 0 var(--accent);
+}
+
+.pixel-step {
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
