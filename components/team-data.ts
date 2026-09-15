@@ -11,7 +11,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "jakub-kuka",
     name: "Jakub Kuka",
-    bio: "Software engineer and consultant based in Prague. Currently at Quadient, bridging clients and developers on AI/ML solutions. Previously interned at UCB in Brussels and worked as a web developer in Slovakia. Has a stand-up comedy background.",
+    bio: "Technical consultant and software engineer focused on AI/ML, bridging clients and development teams to deliver practical, client-ready solutions.",
     skills: ["React", "Next.js", ".NET", "Node.js", "Python", "LangChain/RAG", "Azure"],
     photo: "/team/jakub-kuka.png",
     linkedin: "https://www.linkedin.com/in/jakub-kuka/",
@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "ege-oztas",
     name: "Ege Öztaş",
-    bio: "From Türkiye. 4+ years of experience in software development and cloud engineering. Runs a small software studio shipping AI-native SaaS products and iOS apps end-to-end. Enjoys gaming, game development, and Formula 1.",
+    bio: "From Türkiye. 4+ years of experience in software development and cloud engineering. Runs a small software studio shipping AI-native SaaS products and iOS apps end-to-end. Enjoys game development, and Formula 1.",
     skills: ["TypeScript", "Next.js", "Python", "Supabase/PostgreSQL", "GCP"],
     photo: "/team/ege-oztas.jpeg",
     linkedin: "https://www.linkedin.com/in/egeoztas/",

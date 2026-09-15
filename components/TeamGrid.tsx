@@ -21,19 +21,19 @@ export default function TeamGrid() {
       id="team"
       className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
-      <div className="mx-auto max-w-[1800px]">
-        <div className="mb-8 flex flex-col items-center gap-4 text-center">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-16  flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
             The Team
           </h2>
-          <p className="mx-auto max-w-2xl text-foreground-muted">
+          <p className="mx-auto max-w-2xl text-lg text-foreground-muted sm:text-xl">
             Ten software-engineering master&apos;s students building Masters
             together.
           </p>
           <a
             href="/docs/code-of-conduct.pdf"
             download
-            className="pixel-border pixel-shadow-accent bg-accent px-5 py-2.5 font-mono text-xs uppercase tracking-wide text-background transition-transform duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+            className="pixel-border pixel-shadow-accent bg-accent px-6 py-3 font-mono text-sm uppercase tracking-wide text-background transition-transform duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[6px] active:translate-y-[6px] active:shadow-none"
           >
             Download Code of Conduct
           </a>

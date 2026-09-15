@@ -19,7 +19,7 @@ export default function ProjectIntro() {
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
             The Project
           </h2>
-          <p className="text-foreground-muted">
+          <p className="text-lg text-foreground-muted sm:text-xl">
             We&apos;re building a hybrid online gaming platform for board
             games and card games. Players anywhere in the country can pick a
             game and join a table - playing alongside people sitting at
@@ -33,7 +33,7 @@ export default function ProjectIntro() {
           {FEATURES.map((feature) => (
             <li
               key={feature}
-              className="pixel-border flex w-full items-center gap-3 bg-surface px-4 py-3 text-sm text-foreground sm:w-[calc(50%-0.375rem)]"
+              className="pixel-border flex w-full items-center gap-3 bg-surface px-4 py-3 text-base text-foreground sm:w-[calc(50%-0.375rem)] sm:text-lg"
             >
               <span aria-hidden className="text-accent">
                 ▪

@@ -10,7 +10,7 @@ export default function TeamMemberCard({
 }) {
   return (
     <article
-      className={`pixel-border pixel-shadow flex min-h-[440px] flex-col items-center gap-4 bg-surface p-5 ${className ?? ""}`}
+      className={`pixel-border pixel-shadow flex h-[720px] flex-col items-center gap-4 bg-surface p-5 ${className ?? ""}`}
     >
       <div className="pixel-border relative flex aspect-[3/4] w-full max-w-[240px] flex-shrink-0 items-center justify-center overflow-hidden bg-background">
         {member.photo ? (
@@ -34,7 +34,7 @@ export default function TeamMemberCard({
       <div className="flex flex-col items-center gap-2 text-center">
         <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
         {member.bio && (
-          <p className="text-sm leading-relaxed text-foreground-muted">
+          <p className="text-lg leading-relaxed text-foreground-muted sm:text-xl">
             {member.bio}
           </p>
         )}

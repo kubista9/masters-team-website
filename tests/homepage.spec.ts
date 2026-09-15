@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { teamMembers } from "@/components/team-data";
 
 test("hero renders the team name and tagline", async ({ page }) => {
   await page.goto("/");
@@ -71,11 +72,8 @@ test("team cards show the full bio and no skills or LinkedIn links", async ({ pa
     .filter({ has: page.getByRole("heading", { name: "Jakub Kuka" }) });
 
   // The bio should render in full, not truncated.
-  await expect(
-    jakubCard.getByText(
-      "Software engineer and consultant based in Prague. Currently at Quadient, bridging clients and developers on AI/ML solutions. Previously interned at UCB in Brussels and worked as a web developer in Slovakia. Has a stand-up comedy background."
-    )
-  ).toBeVisible();
+  const jakubBio = teamMembers.find((m) => m.id === "jakub-kuka")!.bio;
+  await expect(jakubCard.getByText(jakubBio)).toBeVisible();
 
   // Skills and LinkedIn links live in team-data.ts but aren't rendered on the card.
   await expect(page.locator("#team").getByRole("link", { name: /LinkedIn/ })).toHaveCount(0);
