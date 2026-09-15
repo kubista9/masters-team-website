@@ -21,7 +21,7 @@ export default function TeamGrid() {
       id="team"
       className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1800px]">
         <div className="mb-8 flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
             The Team
@@ -39,7 +39,7 @@ export default function TeamGrid() {
           </a>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap items-start justify-center gap-6">
           {members.map((member) => (
             <TeamMemberCard
               key={member.id}

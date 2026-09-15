@@ -64,22 +64,22 @@ test("team order reshuffles between page loads", async ({ page }) => {
   expect(reshuffled).toBe(true);
 });
 
-test("team members link out to LinkedIn in a new tab", async ({ page }) => {
+test("team cards show the full bio and no skills or LinkedIn links", async ({ page }) => {
   await page.goto("/");
   const jakubCard = page
     .locator("#team article")
     .filter({ has: page.getByRole("heading", { name: "Jakub Kuka" }) });
-  const linkedin = jakubCard.getByRole("link", { name: "LinkedIn ↗" });
 
-  await expect(linkedin).toHaveAttribute("href", "https://www.linkedin.com/in/jakub-kuka/");
-  await expect(linkedin).toHaveAttribute("target", "_blank");
-  await expect(linkedin).toHaveAttribute("rel", /noopener/);
+  // The bio should render in full, not truncated.
+  await expect(
+    jakubCard.getByText(
+      "Software engineer and consultant based in Prague. Currently at Quadient, bridging clients and developers on AI/ML solutions. Previously interned at UCB in Brussels and worked as a web developer in Slovakia. Has a stand-up comedy background."
+    )
+  ).toBeVisible();
 
-  // Members with no supplied LinkedIn profile shouldn't get a fabricated link.
-  const alexanderCard = page
-    .locator("#team article")
-    .filter({ has: page.getByRole("heading", { name: "Alexander" }) });
-  await expect(alexanderCard.getByRole("link", { name: /LinkedIn/ })).toHaveCount(0);
+  // Skills and LinkedIn links live in team-data.ts but aren't rendered on the card.
+  await expect(page.locator("#team").getByRole("link", { name: /LinkedIn/ })).toHaveCount(0);
+  await expect(jakubCard.getByText("React")).toHaveCount(0);
 });
 
 test("footer shows the copyright and scrolls back to top", async ({ page }) => {
