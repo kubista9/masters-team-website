@@ -12,7 +12,7 @@ export default function ProjectIntro() {
   return (
     <section
       id="project"
-      className="flex min-h-[80vh] flex-col justify-center border-b-3 border-border-strong px-6 py-20 sm:px-8"
+      className="flex min-h-[95vh] flex-col justify-center border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-8">
         <div className="flex flex-col gap-4 text-center">
