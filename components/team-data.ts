@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "ege-oztas",
     name: "Ege Öztaş",
-    bio: "From Türkiye. 4+ years of experience in software development and cloud engineering. Runs a small software studio shipping AI-native SaaS products and iOS apps end-to-end. Enjoys game development, and Formula 1.",
+    bio: "From Türkiye. 4+ years of experience in software work and cloud engineering. Runs a small software studio shipping AI-native SaaS products and iOS apps end-to-end. Enjoys game development, and Formula 1.",
     skills: ["TypeScript", "Next.js", "Python", "Supabase/PostgreSQL", "GCP"],
     photo: "/team/ege-oztas.jpeg",
     linkedin: "https://www.linkedin.com/in/egeoztas/",
@@ -78,11 +78,5 @@ export const teamMembers: TeamMember[] = [
     skills: ["Automation", "App Development", "Web Development"],
     photo: "/team/saad-bangash.png",
     linkedin: "https://www.linkedin.com/in/saad-bangash",
-  },
-  {
-    id: "alexander",
-    name: "Alexander",
-    bio: "",
-    skills: [],
   },
 ];

@@ -21,13 +21,13 @@ export default function TeamGrid() {
       id="team"
       className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
     >
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-16  flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
             The Team
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-foreground-muted sm:text-xl">
-            Ten software-engineering master&apos;s students building Masters
+            Nine software-engineering master&apos;s students building Masters
             together.
           </p>
           <a
@@ -39,14 +39,25 @@ export default function TeamGrid() {
           </a>
         </div>
 
-        <div className="flex flex-wrap items-start justify-center gap-6">
-          {members.map((member) => (
-            <TeamMemberCard
-              key={member.id}
-              member={member}
-              className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
-            />
-          ))}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {members.map((member, index) => {
+            const isLastOfNine = members.length === 9 && index === 8;
+            return (
+              <div
+                key={member.id}
+                className={
+                  isLastOfNine
+                    ? "sm:col-span-2 sm:flex sm:justify-center lg:col-span-1 lg:block"
+                    : ""
+                }
+              >
+                <TeamMemberCard
+                  member={member}
+                  className={isLastOfNine ? "sm:w-[calc(50%-0.75rem)] lg:w-full" : ""}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
