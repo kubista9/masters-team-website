@@ -11,9 +11,9 @@ export const teamMembers: TeamMember[] = [
   {
     id: "jakub-kuka",
     name: "Jakub Kuka",
-    bio: "Technical consultant and software engineer focused on AI/ML, bridging clients and development teams to deliver practical, client-ready solutions.",
+    bio: "Technical consultant and software engineer focused on AI/ML, bridging clients and development teams to deliver practical, client-ready solutions. Designer of the Masters website.",
     skills: ["React", "Next.js", ".NET", "Node.js", "Python", "LangChain/RAG", "Azure"],
-    photo: "/team/jakub-kuka.png",
+    photo: "/team/jakub.png",
     linkedin: "https://www.linkedin.com/in/jakub-kuka/",
   },
   {
@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
     name: "Ege Öztaş",
     bio: "From Türkiye. 4+ years of experience in software work and cloud engineering. Runs a small software studio shipping AI-native SaaS products and iOS apps end-to-end. Enjoys game development, and Formula 1.",
     skills: ["TypeScript", "Next.js", "Python", "Supabase/PostgreSQL", "GCP"],
-    photo: "/team/ege-oztas.jpeg",
+    photo: "/team/ege.png",
     linkedin: "https://www.linkedin.com/in/egeoztas/",
   },
   {
@@ -29,7 +29,7 @@ export const teamMembers: TeamMember[] = [
     name: "Aqdus Farooq",
     bio: "From Pakistan. Around 8 years of experience in Unity and software development across mobile, PC, and WebGL projects. Enjoys gaming, exploring new places, and learning about technology.",
     skills: ["Unity", "C#"],
-    photo: "/team/aqdus-farooq.jpeg",
+    photo: "/team/aqdus.png",
     linkedin: "https://www.linkedin.com/in/aqdusfarooq/",
   },
   {
@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
     name: "Merve Döker",
     bio: "From Turkey, based in the Netherlands. 10+ years specializing in Java, Spring Boot, backend development, and distributed systems. Enjoys travelling and spending time with her dog, Lucky.",
     skills: ["Java", "Spring Boot", "Distributed Systems"],
-    photo: "/team/merve-doker.png",
+    photo: "/team/merve.png",
     linkedin: "https://www.linkedin.com/in/mervedkr/",
   },
   {
@@ -45,7 +45,7 @@ export const teamMembers: TeamMember[] = [
     name: "Minh Le",
     bio: "Enjoys low-level programming and parallel computing to make the most of the hardware, and is learning FPGA design. Has experience in embedded Linux, virtualization, and computer networking.",
     skills: ["C/C++", "Python", "C#", "MATLAB"],
-    photo: "/team/minh-le.jpeg",
+    photo: "/team/minh.png",
     linkedin: "https://www.linkedin.com/in/minh-le-7144681b3/",
   },
   {
@@ -53,7 +53,7 @@ export const teamMembers: TeamMember[] = [
     name: "Maryam Mirbagheri",
     bio: "Background in Computer Engineering, now shifting focus toward Python, data analysis, and artificial intelligence. Passionate about building intelligent, scalable systems with Machine Learning and MLOps.",
     skills: ["Python", "Data Analysis", "Machine Learning", "MLOps"],
-    photo: "/team/maryam-mirbagheri.png",
+    photo: "/team/maryam.png",
     linkedin: "https://www.linkedin.com/in/mmirbagheri",
   },
   {
@@ -69,14 +69,14 @@ export const teamMembers: TeamMember[] = [
     name: "Saeid Omar",
     bio: "28 years old, married, and keeps it simple: enjoys solving problems, gaming, and spending time with his wife.",
     skills: [],
-    photo: "/team/saeid-omar.jpg",
+    photo: "/team/saeid.png",
   },
   {
     id: "saad-bangash",
     name: "Saad Bangash",
     bio: "Founder of Loomuz, helping businesses launch smarter through automation, app development, and web solutions. Based in the Netherlands. Always building, always learning.",
     skills: ["Automation", "App Development", "Web Development"],
-    photo: "/team/saad-bangash.png",
+    photo: "/team/saad.png",
     linkedin: "https://www.linkedin.com/in/saad-bangash",
   },
 ];
