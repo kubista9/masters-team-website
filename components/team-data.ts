@@ -61,7 +61,7 @@ export const teamMembers: TeamMember[] = [
     name: "Thai Thien An Pham",
     bio: "3+ years of experience building high-throughput, enterprise-grade backends in the insurance domain. Combines Java development with software architecture and Generative AI applications like RAG.",
     skills: ["Java", "Spring Boot", "Spring Batch", "Microservices", "Docker"],
-    photo: "/team/thai-thien-an-pham.jpeg",
+    photo: "/team/un.png",
     linkedin: "https://www.linkedin.com/in/anthaithien-pham28799/",
   },
   {
