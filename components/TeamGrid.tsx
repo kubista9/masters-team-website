@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import CodeOfConduct from "@/components/CodeOfConduct";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import { teamMembers } from "@/components/team-data";
 import { shuffle } from "@/lib/shuffle";
@@ -17,10 +18,7 @@ export default function TeamGrid() {
   }, []);
 
   return (
-    <section
-      id="team"
-      className="border-b-3 border-border-strong px-6 py-20 sm:px-8"
-    >
+    <section id="team" className="border-b-3 border-border-strong px-6 py-20 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16  flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-xl text-foreground sm:text-2xl">
@@ -30,13 +28,7 @@ export default function TeamGrid() {
             Nine software-engineering master&apos;s students building Masters
             together.
           </p>
-          <a
-            href="/docs/code-of-conduct.pdf"
-            download
-            className="pixel-border pixel-shadow-accent bg-accent px-6 py-3 font-mono text-sm uppercase tracking-wide text-background transition-transform duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[6px] active:translate-y-[6px] active:shadow-none"
-          >
-            Download Code of Conduct
-          </a>
+          <CodeOfConduct />
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
