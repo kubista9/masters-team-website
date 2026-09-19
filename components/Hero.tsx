@@ -1,4 +1,4 @@
-import Image from "next/image";
+import HeroParallaxImage from "@/components/HeroParallaxImage";
 
 function PixelGamepad() {
   return (
@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="flex min-h-[95vh] items-center border-b-3 border-border-strong px-6 py-16 sm:px-8"
+      className="flex min-h-[95vh] items-center px-6 py-16 sm:px-8"
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
         <div className="flex flex-1 flex-col items-center gap-8 text-center lg:items-start lg:text-left">
@@ -64,16 +64,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="pixel-border pixel-shadow-accent relative h-[280px] w-full flex-shrink-0 overflow-hidden sm:h-[360px] lg:h-[480px] lg:flex-1 lg:self-stretch">
-          <Image
-            src="/hero-saxion.jpg"
-            alt="Pixel-art illustration of the Saxion University building"
-            fill
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-fill"
-          />
-        </div>
+        <HeroParallaxImage />
       </div>
     </section>
   );
