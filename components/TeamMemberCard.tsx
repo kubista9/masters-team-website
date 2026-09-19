@@ -10,7 +10,7 @@ export default function TeamMemberCard({
 }) {
   return (
     <article
-      className={`pixel-border pixel-shadow flex h-[620px] flex-col items-center gap-4 bg-surface p-5 ${className ?? ""}`}
+      className={`pixel-border pixel-shadow flex h-[620px] flex-col items-center gap-4 bg-surface p-5 transition-transform duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none ${className ?? ""}`}
     >
       <div className="pixel-border relative flex aspect-[3/4] w-full max-w-[240px] flex-shrink-0 items-center justify-center overflow-hidden bg-background">
         {member.photo ? (
