@@ -82,7 +82,7 @@ export default function NotFound() {
         - not found
       </p>
 
-      <table className="w-full max-w-sm font-mono text-xs text-foreground-muted sm:text-sm">
+      <table className="w-full max-w-[400px] font-mono text-xs text-foreground-muted sm:text-sm">
         <tbody>
           {rows.map((row, i) => (
             <tr
