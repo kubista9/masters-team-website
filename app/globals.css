@@ -68,6 +68,35 @@ body {
   outline-offset: 3px;
 }
 
+/* Health-bar section divider: starts empty and fills left to right as you
+   scroll it into view - the fill percentage is set directly on the element
+   as a CSS custom property by components/HealthBarDivider.tsx. */
+.section-divider {
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  border-top: 3px solid var(--border-strong);
+  border-bottom: 3px solid var(--border-strong);
+}
+
+.section-divider-healthbar {
+  --fill-percent: 0%;
+}
+
+.section-divider-healthbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--fill-percent, 0%);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 10px,
+    transparent 10px 14px
+  );
+  transition: width 0.1s linear;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
